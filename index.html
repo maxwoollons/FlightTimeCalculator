@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Time Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Flight Time Calculator</h1>
+        <form>
+            <p>Start Airport ICAO <input id="start" type="text" name="distance" /></p>
+            <p>End Airport ICAO <input id="end" type="text" name="air_speed" /></p>
+            <p>Aircraft:</p>
+            <select name="aircraft" id="aircraft">
+                <option value="B736">B737-600</option>
+                <option value="C172">Cessna 172</option>
+                <option value="C152">Cessna 152</option>
+
+
+            </select>
+            <p>Units</p>
+            <select name="units" id="units">
+                <option value="km">Kilometers</option>
+                <option value="nm">Nautical Miles</option>
+                <option value="sm">Miles</option>
+            </select>
+
+            
+            <p><button type="button" name="submit"  onclick="calculateDistance(event)">Calculate</button></p>
+        </form>
+
+
+        <div class="result" id="result">
+            <h2>Result</h2>
+            <p>Start Airport: <span id="start-airport"></span></p>
+            <p>End Airport: <span id="end-airport"></span></p>
+            <p>Distance: <span id="distance"></span></p>
+            <p>Flight Time: <span id="flight-time"></span></p>
+        </div>
+        
+
+        <div class="loading" id="loading-item">
+            <span class="loader"></span>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
