@@ -10,45 +10,79 @@
 </head>
 
 <body>
+    <h1 class="title">Flight Time and Fuel Calculator</h1>
+
     <div class="container">
-        <h1 class="title">Flight Time Calculator</h1>
-        <form>
-            <p>Start Airport ICAO <input id="start" type="text" name="distance" /></p>
-            <p>End Airport ICAO <input id="end" type="text" name="air_speed" /></p>
-            <p>Aircraft:</p>
-            <select name="aircraft" id="aircraft">
-                <option value="B736">B737-600</option>
-                <option value="C172">Cessna 172</option>
-                <option value="C152">Cessna 152</option>
+        <div class="flex">
+
+        <div class="input">
+            <form>
+                <p>Start Airport ICAO <input id="start" type="text" name="distance" /></p>
+                <p>End Airport ICAO <input id="end" type="text" name="air_speed" /></p>
+                <p>Aircraft:</p>
+                <select name="aircraft" id="aircraft">
+                    <option value="B736">B737-600</option>
+                    <option value="B737">B737-700</option>
+                    <option value="B738">B737-800</option>
+                    <option value="A320n">A320 Neo</option>
+                    <option value="A321">A321 Neo</option>
+                    <option value="C172">Cessna 172</option>
+                    <option value="C152">Cessna 152</option>
 
 
-            </select>
-            <p>Units</p>
-            <select name="units" id="units">
-                <option value="km">Kilometers</option>
-                <option value="nm">Nautical Miles</option>
-                <option value="sm">Miles</option>
-            </select>
+                </select>
+                <p>Units</p>
+                <select name="units" id="units">
+                    <option value="km">Kilometers</option>
+                    <option value="nm">Nautical Miles</option>
+                    <option value="sm">Miles</option>
+                </select>
 
-            
-            <p><button type="button" name="submit"  onclick="calculateDistance(event)">Calculate</button></p>
-        </form>
+                <select id="lborkg" name="lborkg" id="lborkg">
+                    <option value="kg">Kilograms</option>
+
+                    <option value="lb">Pounds</option>
+                </select>
+
+                <select name="corf" id="corf">
+                    <option value="c">Celsius</option>
+                    <option value="f">Fahrenheit</option>
+                </select>                
 
 
+                <p><button type="button" name="submit" onclick="calculateDistance(event)">Calculate</button></p>
+            </form>
+
+        </div>
         <div class="result" id="result">
             <h2>Result</h2>
-            <p>Start Airport: <span id="start-airport"></span></p>
-            <p>End Airport: <span id="end-airport"></span></p>
+            <p>Departure Airport: <span id="start-airport"></span>
+            <br>Weather Data: <span id="weather1"></span></p>
+
+            <p>Arrival Airport: <span id="end-airport"></span>
+            <br/>Weather Data: <span id="weather2"></span>
+            </p>
+
+
             <p>Distance: <span id="distance"></span></p>
             <p>Flight Time: <span id="flight-time"></span></p>
-        </div>
-        
-
-        <div class="loading" id="loading-item">
-            <span class="loader"></span>
+            <p>Required Fuel: <span id="fuel"></span></p>
         </div>
     </div>
+
+        
+
+
+
+        
+
+
+    </div>
     
+    <div class="loading" id="loading-item">
+        <span class="loader"></span>
+    </div>
+
 
 </body>
 
